@@ -20,7 +20,11 @@ phases and shocked me in signoff.
 • I back to run_sta proc and change the switch to -multi_corner and it works 
 Alhamdulillah.
 
+
 ![image](https://github.com/islam-nasser0/RTL2GDSII_flow_for_SPI-flash_design_using_OpenLane/assets/111699435/99a30b06-39c9-41b1-be43-b67e9b36ca38)
+
+### Conclusion → We can run multi-corner static timing analysis after synthesis.
+
 
 ## Workflow:
 - Change configurations of phases (synthesis, floorplan, Power plan, …) to specify your design constrains
@@ -29,17 +33,14 @@ Alhamdulillah.
 - I run 10 iterations to reach the acceptable numbers I satisfied with, you can find all details in GitHub 
 - Finally stream GDSII using Magic and view it using Klayout
   
+## Project iterations
+
+![image](https://github.com/islam-nasser0/RTL2GDSII_flow_for_SPI-flash_design_using_OpenLane/assets/111699435/3137a31b-4d8a-478a-af6d-39c3cf4e4cb0)
 
 
 
 
-
-
-
-
-
-
-
-Results: clock period = 12ns with slack 0.11ns and core area = 41367um2
+## Results
+clock period = 12ns with slack 0.11ns and core area = 41367um2
 
 
