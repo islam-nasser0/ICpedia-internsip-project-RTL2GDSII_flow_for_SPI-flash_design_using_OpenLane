@@ -60,3 +60,32 @@ Alhamdulillah.
 clock period = 12ns with slack 0.11ns and core area = 41367um2
 
 
+
+SYNTHESIS MODIFICATIONS:
+1- Input and output delay: I made it 0.55 from clock cycle to the neighboring block (0.05 from clock to routing between ports and 0.5 to the adjacent block)
+
+Note  (the IP will put in chip and should take in consideration the timing with adjacent blocks) 
+
+Note  I left 0.05 to routing and the adjacent block will be left the same to have 0.1 from clock to routing and that enough as it is old technology (routing delay is small and not dominant)
+
+The parameter control input and output delay is IO_PCT you can find in configurations/synthesis.tcl. 
+
+To ensure the outside world constrains parameters is settled correctly you can find in scripts/base.tcl:
+•	Driving cell  sky130_fd_sc_hd__inv_2 (we use cell with low driving strength to not be more optimistic)
+•	Load cap  33.44 ff (also moderate out load cap to simulate the real case)
+
+
+
+
+SYNTHESIS MODIFICATIONS:
+1- Input and output delay: I made it 0.55 from clock cycle to the neighboring block (0.05 from clock to routing between ports and 0.5 to the adjacent block)
+
+Note  (the IP will put in chip and should take in consideration the timing with adjacent blocks) 
+
+Note  I left 0.05 to routing and the adjacent block will be left the same to have 0.1 from clock to routing and that enough as it is old technology (routing delay is small and not dominant)
+
+The parameter control input and output delay is IO_PCT you can find in configurations/synthesis.tcl. 
+
+To ensure the outside world constrains parameters is settled correctly you can find in scripts/base.tcl:
+•	Driving cell  sky130_fd_sc_hd__inv_2 (we use cell with low driving strength to not be more optimistic)
+•	Load cap  33.44 ff (also moderate out load cap to simulate the real case)
